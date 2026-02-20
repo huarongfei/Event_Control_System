@@ -8,6 +8,10 @@ import Dashboard from './pages/Dashboard';
 import MatchList from './pages/MatchList';
 import MatchControl from './pages/MatchControl';
 import DisplayScreen from './pages/DisplayScreen';
+import ScoreHistory from './pages/ScoreHistory';
+import Analytics from './pages/Analytics';
+import AuditLogs from './pages/AuditLogs';
+import TimerControl from './pages/TimerControl';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -85,7 +89,11 @@ const App: React.FC = () => {
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
             <Route path="/matches" element={<PrivateRoute element={<MatchList />} />} />
             <Route path="/matches/:id/control" element={<PrivateRoute element={<MatchControl />} />} />
+            <Route path="/matches/:id/history" element={<PrivateRoute element={<ScoreHistory />} />} />
+            <Route path="/matches/:id/timers" element={<PrivateRoute element={<TimerControl />} />} />
             <Route path="/display/:id" element={<DisplayScreen />} />
+            <Route path="/analytics" element={<PrivateRoute element={<Analytics />} />} />
+            <Route path="/audit-logs" element={<PrivateRoute element={<AuditLogs />} />} />
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </Router>

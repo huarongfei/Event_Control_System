@@ -11,6 +11,10 @@ import { initializeDatabases } from './config/database.js';
 import SocketManager from './sockets/index.js';
 import authRoutes from './routes/auth.js';
 import matchRoutes from './routes/match.js';
+import scoreEngineRoutes from './routes/scoreEngine.js';
+import timerRoutes from './routes/timer.js';
+import auditRoutes from './routes/audit.js';
+import analyticsRoutes from './routes/analytics.js';
 
 dotenv.config();
 
@@ -55,6 +59,10 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/matches', matchRoutes);
+app.use('/api/score-engine', scoreEngineRoutes);
+app.use('/api/timers', timerRoutes);
+app.use('/api/audit', auditRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 const socketManager = new SocketManager(io);
 
