@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'DIN Next', system-ui, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #0A0E27;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+}
